@@ -1,0 +1,30 @@
+From 29f6afc6b6595506f90394278e04c076d8f0f893 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Bastien=20ROUCARI=C3=88S?= <roucaries.bastien@gmail.com>
+Date: Mon, 3 Apr 2017 17:59:07 +0200
+Subject: Update examples to use system falafel
+Forwarded: not-needed
+
+--- a/example/array.js
++++ b/example/array.js
+@@ -1,4 +1,4 @@
+-var falafel = require('../');
++var falafel = require('falafel');
+ 
+ var src = '(' + function () {
+     var xs = [ 1, 2, [ 3, 4 ] ];
+--- a/example/keyword.js
++++ b/example/keyword.js
+@@ -1,4 +1,4 @@
+-var falafel = require('../');
++var falafel = require('falafel');
+ var src = 'console.log(beep "boop", "BOOP");';
+ 
+ function isKeyword (id) {
+--- a/example/prompt.js
++++ b/example/prompt.js
+@@ -1,4 +1,4 @@
+-var falafel = require('../');
++var falafel = require('falafel');
+ var vm = require('vm');
+ 
+ var termExps = [

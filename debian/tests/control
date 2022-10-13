@@ -1,0 +1,4 @@
+Tests: run-examples
+Depends: @
+ , nodejs (>= 6)
+Restrictions: allow-stderr

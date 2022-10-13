@@ -1,0 +1,17 @@
+Description: Replace foreach package by lodash.foreach
+Author: Bastien ROUCARIÈS <roucaries.bastien@gmail.com>
+Forwarded: not-needed
+Reviewed-By: Xavier Guimard <yadd@debian.org>
+Last-Update: 2020-10-11
+
+--- a/index.js
++++ b/index.js
+@@ -1,7 +1,7 @@
+ var acorn = require('acorn');
+ var isArray = require('isarray');
+ var objectKeys = Object.keys;
+-var forEach = require('foreach');
++var forEach = require('lodash.foreach');
+ var util = require('util');
+ 
+ module.exports = function (src, opts, fn) {

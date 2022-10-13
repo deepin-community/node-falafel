@@ -1,0 +1,4 @@
+0001-Remove-depends-on-object-keys-package.patch
+0002-Replace-foreach-package-by-lodash.foreach.patch
+0004-Update-examples-to-use-system-falafel.patch
+0006-Do-not-use-inspect-but-custom-property.patch

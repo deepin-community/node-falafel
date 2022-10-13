@@ -1,0 +1,36 @@
+Source: node-falafel
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Bastien Roucariès <rouca@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , node-acorn (>= 6~) <!nocheck>
+ , node-isarray <!nocheck>
+ , node-lodash-packages <!nocheck>
+ , node-safe-buffer <!nocheck>
+ , node-semver <!nocheck>
+ , node-tap <!nocheck>
+ , node-tape <!nocheck>
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-falafel
+Vcs-Git: https://salsa.debian.org/js-team/node-falafel.git
+Homepage: https://github.com/substack/node-falafel
+Rules-Requires-Root: no
+
+Package: node-falafel
+Architecture: all
+Depends: ${misc:Depends}
+ , node-acorn (>= 6~)
+ , node-isarray
+ , node-lodash-packages
+Multi-Arch: foreign
+Description: transform javascript AST on a recursive walk
+ Falafel is a pure javascript implementation of recursive walk of
+ abstract syntax tree (AST).
+ .
+ Using falafel you could do syntax aware search and replace, and
+ patching using DOM like method.
+ .
+ Node.js is an event-based server-side JavaScript engine.

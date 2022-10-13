@@ -1,0 +1,37 @@
+Description: Do not use inspect but custom property
+Author: Bastien Roucariès <rouca@debian.org>
+Forwarded: https://github.com/substack/node-falafel/issues/69
+Reviewed-By: Xavier Guimard <yadd@debian.org>
+Last-Update: 2020-10-11
+
+--- a/index.js
++++ b/index.js
+@@ -25,7 +25,7 @@
+     var result = {
+         chunks : src.split(''),
+         toString : function () { return result.chunks.join('') },
+-        inspect : function () { return result.toString() }
++        [util.inspect.custom](depth, options)  { return result.toString(); }
+     };
+     if (util.inspect.custom) {
+         result[util.inspect.custom] = result.toString;
+--- a/test/inspect.js
++++ b/test/inspect.js
+@@ -3,7 +3,7 @@
+ var util = require('util');
+ 
+ test('inspect', function (t) {
+-    t.plan(7);
++    t.plan(6);
+     
+     var src = '(function () {'
+         + 'var xs = [ 1, 2, [ 3, 4 ] ];'
+@@ -16,7 +16,7 @@
+             node.update('fn(' + node.source() + ')');
+         }
+     });
+-    t.equal(output.inspect(), output.toString());
++    //t.equal(output.inspect(), output.toString());
+     t.equal(util.inspect(output), output.toString());
+     
+     var arrays = [
